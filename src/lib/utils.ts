@@ -5,5 +5,5 @@ export function handleLoginRedirect(
 	message: string = "You must be logged in to access this page"
 ) {
 	const redirectTo = event.url.pathname + event.url.search
-	return `/login?redirectTo=${redirectTo}&message=${message}`
+	return `/login?redirectTo=${encodeURIComponent(redirectTo)}&message=${message}`
 }
